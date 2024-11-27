@@ -30,16 +30,39 @@ body {
   color: #ffffff;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
   body {
     background: url("../img/FondoR.jpg") no-repeat center center;
-    background-attachment: scroll; /* Elimina el fixed para mejorar la adaptación */
-    background-size: contain; /* Ajusta para que se vea completa la imagen */
+    background-attachment: scroll; /* Elimina fixed para mejor comportamiento móvil */
+    background-size: cover; /* Mantiene la imagen responsiva */
   }
 }
+
+/* Asegurarse de que los textos se mantengan visibles */
+h1, p {
+  text-align: center;
+  margin: 0 20px;
+  max-width: 800px; /* Limitar el ancho del texto para pantallas más grandes */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
 
 .contenedor-proyectos {
   display: flex;
