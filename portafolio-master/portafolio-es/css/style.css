@@ -26,43 +26,16 @@ html {
 body {
   font-family: "Oswald", sans-serif;
   background: url("../img/FondoR.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-size: 100% auto; /* Ajusta el ancho al 100% y el alto automáticamente */
   color: #ffffff;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Media query para dispositivos móviles */
+/* Media query para ajustar en pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background: url("../img/FondoR.jpg") no-repeat center center;
-    background-attachment: scroll; /* Elimina fixed para mejor comportamiento móvil */
-    background-size: cover; /* Mantiene la imagen responsiva */
+    background-size: auto 100%; /* Ajusta el alto al 100% y el ancho automáticamente */
+    background-attachment: scroll; /* Permite que el fondo sea más fluido en móviles */
   }
-}
-
-/* Asegurarse de que los textos se mantengan visibles */
-h1, p {
-  text-align: center;
-  margin: 0 20px;
-  max-width: 800px; /* Limitar el ancho del texto para pantallas más grandes */
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-
 
 .contenedor-proyectos {
   display: flex;
