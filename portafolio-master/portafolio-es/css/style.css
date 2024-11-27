@@ -28,6 +28,17 @@ body {
   background: url("../img/FondoR.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+    background: url("../img/FondoR.jpg") no-repeat center center;
+    background-attachment: scroll; /* Elimina el fixed para mejorar la adaptación */
+    background-size: contain; /* Ajusta para que se vea completa la imagen */
+  }
 }
 
 .contenedor-proyectos {
@@ -49,7 +60,7 @@ body {
   height: 300px;
   object-fit: cover;
 }
-/* Estilos exclusivos para la sección de certificados */
+
 .certificados .contenedor-certificados {
   display: flex;
   flex-wrap: wrap;
