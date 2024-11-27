@@ -26,16 +26,39 @@ html {
 body {
   font-family: "Oswald", sans-serif;
   background: url("../img/FondoR.jpg") no-repeat center center fixed;
-  background-size: 100% auto; /* Ajusta el ancho al 100% y el alto automáticamente */
+  background-size: cover;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-/* Media query para ajustar en pantallas pequeñas */
-@media (max-width: 768px) {
+/* Media queries para diferentes dispositivos */
+@media screen and (max-width: 767px) {
+  /* Específico para dispositivos móviles (iPhone) */
   body {
-    background-size: auto 100%; /* Ajusta el alto al 100% y el ancho automáticamente */
-    background-attachment: scroll; /* Permite que el fondo sea más fluido en móviles */
+    background-position: center top;
+    background-size: cover;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Para tablets */
+  body {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* Para pantallas de escritorio */
+  body {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+
 
 .contenedor-proyectos {
   display: flex;
