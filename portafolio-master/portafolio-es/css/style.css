@@ -31,93 +31,19 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  background-attachment: scroll;
 }
-
-/* Media queries para diferentes dispositivos */
-@media screen and (max-width: 767px) {
-  /* Específico para dispositivos móviles (iPhone) */
-  body {
-    background-position: center top;
-    background-size: cover;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Para tablets */
-  body {
-    background-position: center center;
-    background-size: cover;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  /* Para pantallas de escritorio */
-  body {
-    background-position: center center;
-    background-size: cover;
-  }
-}
-
-
-
-.contenedor-proyectos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.proyecto {
-  flex: 1 1 24%;
-  padding: 10px;
-  background-color: #f00909;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.foto img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.certificados .contenedor-certificados {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.certificados .contenedor-certificados a {
-  flex: 1 1 45%; /* Ocupa hasta el 45% del contenedor */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 600px; /* Ajusta según el tamaño máximo deseado */
-}
-
-.certificados .contenedor-certificados img {
-  width: auto; /* Mantiene las proporciones originales */
-  max-width: 100%; /* Limita el ancho de la imagen */
-  height: auto; /* Mantiene la altura proporcional */
-  max-height: 80vh; /* Limita la altura máxima */
-  object-fit: contain; /* Mantiene la proporción original */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
 
 .contenedor {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
-  
+  padding: 0 15px;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -130,6 +56,60 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
+}
+
+.contenedor-proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.proyecto {
+  background-color: #f00909;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+
+.proyecto .foto img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: filter 0.5s ease-in-out;
+}
+
+.proyecto .foto a img:hover {
+  filter: grayscale(100);
+}
+
+.certificados .contenedor-certificados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificados .contenedor-certificados a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.certificados .contenedor-certificados img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .boton-arriba {
@@ -145,45 +125,76 @@ h1, h2, h3, h4, h5, h6, p {
   z-index: 1;
 }
 
-/** Media Queries **/
-/** Media Queries **/
-@media only screen and (min-width: 48rem) {
-  .menu {
-    grid-template-columns: 10% auto 10%;
-  }
-  .menu .contenedor-menu a {
-    font-size: 1.1rem;
-  }
-  .menu .idiomas {
-    display: grid;
-    flex-direction: column;
+/* Responsividad para dispositivos móviles */
+@media screen and (max-width: 767px) {
+  body {
+    background-position: center top;
+    background-size: cover;
   }
 
-  .header {
-    height: 100vh;
+  .titulo {
+    font-size: 1.5rem;
   }
-  .header .contenedor-header {
-    height: 100%;
+
+  .header .contenedor-header .nombre {
+    font-size: 3rem !important;
+    letter-spacing: 0.2rem;
   }
+
+  .header .contenedor-header h2 {
+    font-size: 1.5rem;
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .contenedor-proyectos,
+  .certificados .contenedor-certificados {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsividad para tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .header .contenedor-header .nombre {
+    font-size: 5rem !important;
+    letter-spacing: 0.3rem;
+  }
+
+  .header .contenedor-header h2 {
+    font-size: 2rem;
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .contenedor-proyectos,
+  .certificados .contenedor-certificados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Pantallas de escritorio */
+@media screen and (min-width: 1025px) {
+  body {
+    background-position: center center;
+    background-size: cover;
+  }
+
   .header .contenedor-header .nombre {
     font-size: 7rem !important;
     letter-spacing: 0.4rem;
-    font-weight: bold; 
   }
+
   .header .contenedor-header h2 {
+    font-size: 3rem;
     min-width: 35.375rem;
     max-width: 35.375rem;
-    font-size: 3rem ;
   }
 }
-.main .proyectos .contenedor-proyectos .proyecto .foto a img {
-  filter: grayscale(0);
-  transition: all 0.5s ease-in-out;
-}
-.main .proyectos .contenedor-proyectos .proyecto .foto a img:hover {
-  filter: grayscale(100);
-}
-
 .menu {
   margin-top: 2rem;
   padding: 0.5rem;
