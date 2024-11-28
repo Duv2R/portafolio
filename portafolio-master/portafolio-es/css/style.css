@@ -23,6 +23,7 @@ html {
   border-radius: 5px;
 }
 
+/* Estilos generales */
 body {
   font-family: "Oswald", sans-serif;
   background: url("../img/FondoR.jpg") no-repeat center center fixed;
@@ -33,30 +34,6 @@ body {
   min-height: 100vh;
 }
 
-/* Media queries para diferentes dispositivos */
-@media screen and (max-width: 767px) {
-  /* Específico para dispositivos móviles (iPhone) */
-  body {
-    background-position: center top;
-    background-size: cover;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Para tablets */
-  body {
-    background-position: center center;
-    background-size: cover;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  /* Para pantallas de escritorio */
-  body {
-    background-position: center center;
-    background-size: cover;
-  }
-}
 
 .contenedor-proyectos {
   display: flex;
@@ -144,7 +121,32 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /** Media Queries **/
-/** Media Queries **/
+/* Media Queries para diferentes dispositivos */
+@media screen and (max-width: 767px) {
+  /* Específico para dispositivos móviles (iPhone) */
+  body {
+    background-position: center top;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Para tablets */
+  body {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  /* Para pantallas de escritorio */
+  body {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+/* Estilos específicos para elementos en pantallas medianas y grandes */
 @media only screen and (min-width: 48rem) {
   .menu {
     grid-template-columns: 10% auto 10%;
@@ -171,9 +173,10 @@ h1, h2, h3, h4, h5, h6, p {
   .header .contenedor-header h2 {
     min-width: 35.375rem;
     max-width: 35.375rem;
-    font-size: 3rem ;
+    font-size: 3rem;
   }
 }
+
 .main .proyectos .contenedor-proyectos .proyecto .foto a img {
   filter: grayscale(0);
   transition: all 0.5s ease-in-out;
